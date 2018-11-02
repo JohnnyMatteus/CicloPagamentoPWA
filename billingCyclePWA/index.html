@@ -9,8 +9,21 @@
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#3f51b5">
   <link rel="manifest" href="manifest.json">
+  
 <link rel="stylesheet" href="styles.716314f5e59959811bb3.css"></head>
 <body>
+  <script>
+    if('serviceWorker' in navigator){
+      window.addEventListener('load', function(){
+        navigator.serviceWorker.register('service-worker.js')
+          .then(function(registration){
+            console.log('Service Worker registrado com sucesso!', registration.scope);
+          }).catch(function(error){
+            console.log('Erro ao registrar service worker!'. error);
+          });
+      });
+    }
+  </script>
   <app-root></app-root>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
 <script type="text/javascript" src="runtime.ec2944dd8b20ec099bf3.js"></script><script type="text/javascript" src="polyfills.c6871e56cb80756a5498.js"></script><script type="text/javascript" src="main.c0f98067b4c61385429d.js"></script></body>
